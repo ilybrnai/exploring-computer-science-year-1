@@ -1,0 +1,14 @@
+name = input("Enter a name: ") #Grace
+adj1 = input("Enter an adjective: ") #stinky
+adj2 = input("Enter an adjective: ") #blue
+adverb = input("Enter an adverb: ") #quietly
+food = input("Enter a food: ") #soup
+food2 = input("Enter another food: ") #bananas
+noun = input("Enter a noun: ") #button
+place = input("Enter a place: ") #Paris
+verb = input("Enter a verb: ") #jump
+print("Let's play Silly Sentences!\n")
+print(name + " was planning a dream vacation to " + place + ".")
+print(name + " was especially looking forward to trying the local\ncuisine, including " + adj1 + " " + food + " and " + food2 + ".\n")
+print(name + " will have to practice the language " + adverb + " to\nmake it easier to " + verb + " with people.\n")
+print(name + " has a long list of sights to see, including the\n" + noun + " museum and the " + adj2 + " park.")
