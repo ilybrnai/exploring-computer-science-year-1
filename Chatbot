@@ -1,0 +1,44 @@
+import random
+a = random.randint(1,3)
+if a == 1:
+    print("Nice name")
+name = input("What is your first name? \n")
+if name == "Brian":
+    print("Awesome! Thats my name too.")
+elif name == "Ryan":
+    print("Nice name!")
+else: 
+    print("Wow \n")
+shoes = input("What shoes do you like? \n")
+if shoes == "Converse":
+    print("Nice, casual is always in! \n")
+elif shoes == "Crocs":
+    print("Good choice!")
+else:
+    print("Get better shoes.")
+age = int(input("How old are you? \n"))
+if age == 9:
+    print(str(age) + " is a good age to start exploring style.\nI think I might know your style")
+elif age == 10:
+    print("LOl")
+else:
+    print("Yee")
+top = input("So, " + name + ", what is your favorite top?")
+if top == "Graphic Tees":
+    print("Superb!")
+elif top == "Vans":
+    print("Lit")
+else:
+    print("Nice")
+bottom = input("What about your choice of bottom?")
+if bottom == "Cargo":
+    print("I also like cargo pants.")
+elif bottom == "Khakis":
+    print("Nice")
+else:
+    print("No")
+season = input("What is ur kind of season?")
+if season == "summer" or season == "winter":
+    print("Although I like that season, its not my favorite.\n")
+else:
+    print("nice")
