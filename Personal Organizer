@@ -1,0 +1,91 @@
+def validateMonth(month):
+    if month >= 1 and month <= 12:
+        return month
+    else:
+        while month < 1 or month > 12:
+            month = int(input("Enter a new month: "))
+        return month
+def leap_year(year):
+    if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
+        return 1
+    else: 
+        return 0
+        
+def validateDay(month, day, year):
+    if month == 1 or month == 3 or month == 5 or month == 7 or month == 8 or month == 10 or month == 12:
+        temp2 = 31
+    elif month == 4 or month == 6 or month == 9 or month == 11:
+        temp2 = 30
+    else: 
+        if leap_year(year) == 1:
+            temp2 = 29
+        else: 
+            temp2 = 28
+    while day <= temp2 - temp2 or day > temp2:
+        day = int(input("Enter a new day: "))
+    return day
+
+    
+def printEvents():
+    print("******************** List of Events ********************")
+    for i in range(len(eventName)):
+        print(eventName[i])
+        for j in range(len(eventName)):
+            if eventMonth[j] == 1:
+                eventMonth.remove(1)
+                eventMonth.insert(j, "January")
+            elif eventMonth[j] == 2:
+                eventMonth.remove(2)
+                eventMonth.insert(j, "February")
+            elif eventMonth[j] == 3:
+                eventMonth.remove(3)
+                eventMonth.insert(j, "March")
+            elif eventMonth[j] == 4:
+                eventMonth.remove(4)
+                eventMonth.insert(j, "April")
+            elif eventMonth[j] == 5:
+                eventMonth.remove(5)
+                eventMonth.insert(j, "May")
+            elif eventMonth[j] == 6:
+                eventMonth.remove(6)
+                eventMonth.insert(j, "June")
+            elif eventMonth[j] == 7:
+                eventMonth.remove(7)
+                eventMonth.insert(j, "July")                
+            elif eventMonth[j] == 8:
+                eventMonth.remove(8)
+                eventMonth.insert(j, "August")
+            elif eventMonth[j] == 9:
+                eventMonth.remove(9)
+                eventMonth.insert(j, "September")
+            elif eventMonth[j] == 10:
+                eventMonth.remove(10)
+                eventMonth.insert(j, "October")
+            elif eventMonth[j] == 11:
+                eventMonth.remove(11)
+                eventMonth.insert(j, "November")
+            elif eventMonth[j] == 12:
+                eventMonth.remove(12)
+                eventMonth.insert(j, "December")
+        print("Date: " + str(eventMonth[i]) + " " + str(eventDay[i]) + ", " + str(eventYear[i]))
+        
+def addEvent():
+    tempName = input("What is the event: ")
+    tempYear = int(input("What is the year: "))
+    tempMonth = int(input("What is the month: "))
+    eventMonth.append(validateMonth(tempMonth))
+    tempDay = int(input("What is the date: "))
+    eventDay.append(validateDay(tempMonth, tempDay, tempYear))
+    eventName.append(tempName)
+    eventYear.append(tempYear)
+#*********** MAIN **********
+eventName = []
+eventMonth = []
+eventDay = []
+eventYear = []
+addEvent()
+another = input("Do you want to enter another date? NO to stop: ")
+while another != "NO":
+    addEvent()
+    another = input("Do you want to enter another date? NO to stop: ")
+printEvents()
