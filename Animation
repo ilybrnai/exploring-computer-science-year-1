@@ -1,0 +1,140 @@
+import simplegui
+import random
+
+# Create Global Variable
+global x
+global y
+global z
+global exrad
+x = 0
+y = 0
+z = 0
+exrad = 0
+def draw_handler(canvas):
+    global x
+    global y
+    global z
+    global exrad
+    x += 5
+    y += 5
+    if z <500:
+        z += 4
+    #moon:
+    canvas.draw_circle ((x+1,0), 200, 5, "black", "gray")
+    canvas.draw_circle ((x+100,0), 10, 5, "white", "white")
+    canvas.draw_circle ((x+80,60), 10, 5, "white", "white")
+    canvas.draw_circle ((x+30,4), 10, 5, "white", "white")
+    canvas.draw_circle ((x+20,100), 10, 5, "white", "white")
+    canvas.draw_circle ((x+150,50), 10, 5, "white", "white")
+    canvas.draw_circle ((x+100, 100), 10, 5, "white", "white")
+    canvas.draw_circle ((x+50,150), 10, 5, "white", "white")
+    canvas.draw_circle ((x-100,0), 10, 5, "white", "white")
+    canvas.draw_circle ((x-80,60), 10, 5, "white", "white")
+    canvas.draw_circle ((x-30,4), 10, 5, "white", "white")
+    canvas.draw_circle ((x-20,100), 10, 5, "white", "white")
+    canvas.draw_circle ((x-150,50), 10, 5, "white", "white")
+    canvas.draw_circle ((x-100, 100), 10, 5, "white", "white")
+    canvas.draw_circle ((x-10,150), 10, 5, "white", "white")
+    #meteor:
+    canvas.draw_circle ((y+1,y-0), 50, 5, "gray", "gray")
+    canvas.draw_circle ((y+0,y-0), 100, 5, "black", "red")
+    canvas.draw_line((y-200, y-200),(y-70, y-70), 10, "orange")
+    canvas.draw_line((y-100, y-250),(y-60, y-80), 10, "orange")
+    canvas.draw_line((y-250, y-100),(y-85, y-50), 10, "orange")
+    
+    #Resets screen to blue
+    if y==800:
+        z=0
+        x=0
+    elif y>800:
+        canvas.draw_polygon([(0,0),(0,600), (600,600), (600,0)], 1, "lightblue", "lightblue")  
+            
+        #clouds
+        canvas.draw_circle((x-460, 160), 30, 1, "black", "white")
+        canvas.draw_circle((x-500, 160), 30, 1, "black", "white")
+        canvas.draw_circle((x-429, 160), 30, 1, "black", "white")
+        canvas.draw_circle((x-460, 130), 30, 1, "black", "white")
+        canvas.draw_circle((x+460, 160), 30, 1, "black", "white")
+        canvas.draw_circle((x+500, 160), 30, 1, "black", "white")
+        canvas.draw_circle((x+429, 160), 30, 1, "black", "white")
+        canvas.draw_circle((x+460, 130), 30, 1, "black", "white")
+        canvas.draw_circle((x-300, 80), 30, 1, "black", "white")
+        canvas.draw_circle((x-340, 80), 30, 1, "black", "white")
+        canvas.draw_circle((x-260, 80), 30, 1, "black", "white")
+        canvas.draw_circle((x-300, 50), 30, 1, "black", "white")
+        canvas.draw_circle((x+300, 80), 30, 1, "black", "white")
+        canvas.draw_circle((x+340, 80), 30, 1, "black", "white")
+        canvas.draw_circle((x+260, 80), 30, 1, "black", "white")
+        canvas.draw_circle((x+300, 50), 30, 1, "black", "white")
+        canvas.draw_circle((x-600, 75), 30, 1, "black", "white")
+        canvas.draw_circle((x-640, 75), 30, 1, "black", "white")
+        canvas.draw_circle((x-560, 75), 30, 1, "black", "white")
+        canvas.draw_circle((x-600, 45), 30, 1, "black", "white")
+        canvas.draw_circle((x+600, 75), 30, 1, "black", "white")
+        canvas.draw_circle((x+640, 75), 30, 1, "black", "white")
+        canvas.draw_circle((x+560, 75), 30, 1, "black", "white")
+        canvas.draw_circle((x+600, 45), 30, 1, "black", "white")
+        canvas.draw_circle((x-700, 60), 30, 1, "black", "white")
+        canvas.draw_circle((x-740, 60), 30, 1, "black", "white")
+        canvas.draw_circle((x-660, 60), 30, 1, "black", "white")
+        canvas.draw_circle((x-700, 30), 30, 1, "black", "white")
+        canvas.draw_circle((x+700, 60), 30, 1, "black", "white")
+        canvas.draw_circle((x+740, 60), 30, 1, "black", "white")
+        canvas.draw_circle((x+660, 60), 30, 1, "black", "white")
+        canvas.draw_circle((x+700, 30), 30, 1, "black", "white")
+        canvas.draw_circle((x-800, 80), 30, 1, "black", "white")
+        canvas.draw_circle((x-840, 80), 30, 1, "black", "white")
+        canvas.draw_circle((x-760, 80), 30, 1, "black", "white")
+        canvas.draw_circle((x-800,50), 30, 1, "black", "white")
+        canvas.draw_circle((x+800, 80), 30, 1, "black", "white")
+        canvas.draw_circle((x+840, 80), 30, 1, "black", "white")
+        canvas.draw_circle((x+760, 80), 30, 1, "black", "white")
+        canvas.draw_circle((x+800,50), 30, 1, "black", "white")
+        canvas.draw_polygon([(0,0),(0,600), (600,600), (600,0)], 1, "darkblue", "darkblue")   
+        canvas.draw_circle ((y+1,y-0), 50, 5, "lightblue", "lightblue")
+        canvas.draw_circle ((y+0,y-0), 100, 5, "black", "red")
+        canvas.draw_line((y-200, y-200),(y-70, y-70), 10, "orange")
+        canvas.draw_line((y-100, y-250),(y-60, y-80), 10, "orange")
+        canvas.draw_line((y-250, y-100),(y-85, y-50), 10, "orange")
+        canvas.draw_circle ((y+1,y-0), 50, 5, "gray", "gray")
+        canvas.draw_circle ((y+0,y-0), 100, 5, "black", "red")
+        canvas.draw_line((y-200, y-200),(y-70, y-70), 10, "orange")
+        canvas.draw_line((y-100, y-250),(y-60, y-80), 10, "orange")
+        canvas.draw_line((y-250, y-100),(y-85, y-50), 10, "orange")
+        #road
+        canvas.draw_polygon([(0,550),(600,550),(600,600),(0,600)], 1, "black", "black")
+        canvas.draw_polygon([(10,570),(50,570),(50,580),(10,580)], 1, "white", "white")
+        canvas.draw_polygon([(80,570),(120,570),(120,580),(80,580)], 1, "white", "white")
+        canvas.draw_polygon([(150,570),(190,570),(190,580),(150,580)], 1, "white", "white")
+        canvas.draw_polygon([(220,570),(260,570),(260,580),(220,580)], 1, "white", "white")
+        canvas.draw_polygon([(290,570),(330,570),(330,580),(290,580)], 1, "white", "white")
+        canvas.draw_polygon([(360,570),(400,570),(400,580),(360,580)], 1, "white", "white")
+        canvas.draw_polygon([(430,570),(470,570),(470,580),(430,580)], 1, "white", "white")
+        canvas.draw_polygon([(500,570),(540,570),(540,580),(500,580)], 1, "white", "white")
+        canvas.draw_polygon([(570,570),(610,570),(610,580),(570,580)], 1, "white", "white")
+        #car
+        canvas.draw_polygon([(z-60,450),(z+100,450),(z+100,560),(z-60,560)], 1, "black", "black")
+        canvas.draw_polygon([(z+100,470),(z+140,470),(z+180,560),(z+100,560)], 1, "white", "white")
+        canvas.draw_circle ((z+10,560), 20, 5, "lightblue", "lightblue")
+        canvas.draw_circle ((z+125,560), 20, 5, "lightblue", "lightblue")
+        #meteor
+        canvas.draw_circle ((z+1,z-0), 50, 5, "gray", "gray")
+        canvas.draw_circle ((z+0,z-0), 100, 5, "black", "red")
+        canvas.draw_line((z-200, z-200),(z-70, z-70), 10, "orange")
+        canvas.draw_line((z-100, z-250),(z-60, z-80), 10, "orange")
+        canvas.draw_line((z-250, z-100),(z-85, z-50), 10, "orange")
+            #rain
+        for i in range(120):
+            xdot=random.randint(1,600)
+            ydot=random.randint(1,1445)
+            canvas.draw_line((xdot,ydot),(xdot,ydot+10),5, "blue")
+        #explosion
+        if z >= 500 and exrad <1500:
+            z=500
+            exrad+=7
+            canvas.draw_circle((500,500), exrad, 4, "orange", "red")
+
+frame = simplegui.create_frame('Watch Your Head!!', 600, 600)
+frame.set_canvas_background("darkblue")
+frame.set_draw_handler(draw_handler)
+frame.start()
